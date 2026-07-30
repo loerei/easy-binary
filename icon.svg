@@ -1,31 +1,24 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
   <defs>
-    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#18181b" />
-      <stop offset="100%" stop-color="#09090b" />
-    </linearGradient>
-    <linearGradient id="binaryGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="vaultGrad" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#60a5fa" />
       <stop offset="100%" stop-color="#2563eb" />
     </linearGradient>
     <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feGaussianBlur stdDeviation="3.5" result="blur" />
       <feComposite in="SourceGraphic" in2="blur" operator="over" />
     </filter>
   </defs>
 
-  <!-- Base Background -->
-  <rect x="8" y="8" width="112" height="112" rx="28" fill="url(#bgGrad)" stroke="#27272a" stroke-width="3" />
-
-  <!-- Package Box Shape -->
-  <path d="M64 26L94 41V73L64 88L34 73V41L64 26Z" fill="none" stroke="url(#binaryGrad)" stroke-width="3" stroke-linejoin="round" opacity="0.5" />
-  <path d="M64 26V58M64 58L94 41M64 58L34 41" fill="none" stroke="url(#binaryGrad)" stroke-width="2" stroke-linejoin="round" opacity="0.5" />
-
-  <!-- Binary 01 Badge -->
-  <rect x="42" y="52" width="44" height="34" rx="10" fill="#1e293b" stroke="url(#binaryGrad)" stroke-width="2.5" filter="url(#glow)" />
-  <text x="54" y="74" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, monospace" font-weight="900" font-size="18" fill="#60a5fa">01</text>
+  <!-- Central Vault / Container Box Base -->
+  <path d="M24 44C24 39.5817 27.5817 36 32 36H96C100.418 36 104 39.5817 104 44V96C104 100.418 100.418 104 96 104H32C27.5817 104 24 100.418 24 96V44Z" fill="#09090b" stroke="url(#vaultGrad)" stroke-width="4" />
   
-  <!-- Download Checkmark Arrow -->
-  <circle cx="86" cy="86" r="14" fill="#2563eb" />
-  <path d="M80 86L84 90L92 82" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+  <!-- Vault Lid Top Handle -->
+  <rect x="46" y="24" width="36" height="12" rx="4" fill="none" stroke="url(#vaultGrad)" stroke-width="3" />
+
+  <!-- Funneling Binary 01 & .exe into Vault -->
+  <text x="64" y="68" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, monospace" font-weight="900" font-size="22" fill="#60a5fa" text-anchor="middle" filter="url(#glow)">BIN 01</text>
+  
+  <!-- Downward Collection Arrow -->
+  <path d="M64 74V92M64 92L54 82M64 92L74 82" stroke="#60a5fa" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)" />
 </svg>
