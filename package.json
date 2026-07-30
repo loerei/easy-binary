@@ -1,9 +1,15 @@
 {
     "name": "easy-binary",
     "displayName": "Easy Binary (Auto Compiler & Runtime Provisioner)",
-    "description": "Automatic compiler & runtime installer via Winget for Windows (GCC, Python, JDK, Go, Node.js, Rust, .NET).",
-    "version": "0.1.1",
+    "description": "Automatic compiler & runtime installer via Winget for Windows. Supports Exclude / Include mode per folder.",
+    "version": "0.2.0",
     "publisher": "loerei",
+    "main": "./extension.js",
+    "activationEvents": [
+        "onCommand:easy-binary.excludeCurrentFolder",
+        "onCommand:easy-binary.includeCurrentFolder",
+        "onCommand:easy-binary.toggleMode"
+    ],
     "engines": {
         "vscode": "^1.80.0"
     },
@@ -14,8 +20,7 @@
         "compiler installer",
         "winget",
         "mingw gcc",
-        "python setup",
-        "jdk setup",
+        "exclude mode",
         "zero setup"
     ],
     "icon": "icon.png",
@@ -32,13 +37,47 @@
         "url": "https://github.com/loerei/easy-binary/issues"
     },
     "contributes": {
+        "commands": [
+            {
+                "command": "easy-binary.excludeCurrentFolder",
+                "title": "Easy Binary: Exclude Current Folder"
+            },
+            {
+                "command": "easy-binary.includeCurrentFolder",
+                "title": "Easy Binary: Include Current Folder"
+            },
+            {
+                "command": "easy-binary.toggleMode",
+                "title": "Easy Binary: Toggle Mode (Exclude / Include)"
+            }
+        ],
         "configuration": {
             "title": "Easy Binary",
             "properties": {
-                "easy-binary.autoInstallMissingCompilers": {
-                    "type": "boolean",
-                    "default": true,
-                    "description": "Automatically prompt or install missing compilers via Winget when pressing F5."
+                "easy-binary.mode": {
+                    "type": "string",
+                    "enum": [
+                        "exclude",
+                        "include"
+                    ],
+                    "default": "exclude",
+                    "description": "Select mode: 'exclude' provisions compilers on all folders except listed ones; 'include' provisions ONLY on listed folders."
+                },
+                "easy-binary.excludedFolders": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "default": [],
+                    "description": "List of folder paths to exclude from auto-compiler provisioning."
+                },
+                "easy-binary.includedFolders": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "default": [],
+                    "description": "List of folder paths to include for auto-compiler provisioning."
                 }
             }
         }
