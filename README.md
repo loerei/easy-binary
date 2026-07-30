@@ -1,6 +1,6 @@
 # 🛠️ Easy Binary (Auto Compiler & Runtime Provisioner)
 
-> 🎓 **Built specifically for CS Learners, Students, & Educators.**
+> 🎓 **Built for CS Learners, Students, & Educators.**
 > **Never worry about installing GCC, MinGW, Python, JDK, or Go manually again.**
 
 ![VS Code Marketplace Version](https://img.shields.io/badge/VS%20Code%20Marketplace-v0.1.0-blue)
