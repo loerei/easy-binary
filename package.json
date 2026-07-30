@@ -2,7 +2,7 @@
     "name": "easy-binary",
     "displayName": "Easy Binary (Auto Compiler & Runtime Provisioner)",
     "description": "Automatic compiler & runtime installer via Winget for Windows (GCC, Python, JDK, Go, Node.js, Rust, .NET).",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "publisher": "loerei",
     "engines": {
         "vscode": "^1.80.0"
