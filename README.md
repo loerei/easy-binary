@@ -1,5 +1,6 @@
 # 🛠️ Easy Binary (Auto Compiler & Runtime Provisioner)
 
+> 🎓 **Built specifically for CS Learners, Students, & Educators.**
 > **Never worry about installing GCC, MinGW, Python, JDK, or Go manually again.**
 
 ![VS Code Marketplace Version](https://img.shields.io/badge/VS%20Code%20Marketplace-v0.1.0-blue)
@@ -30,6 +31,8 @@ Setting up compilers on Windows (PATH variables, MinGW downloads, JDK configurat
 ---
 
 ## 📦 Part of the F5 Anything Suite
+
+This extension is part of the **F5 Anything Suite**, designed to make VS Code friction-free for Computer Science learners:
 
 - **[F5 Anything](https://github.com/loerei/f5-anything)**: Press F5 to build & run any code file instantly.
 - **[No More .vscode](https://github.com/loerei/no-more-vscode)**: Keep your workspace 100% clean by isolating binary outputs away from your code folders.
